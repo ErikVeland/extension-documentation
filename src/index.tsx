@@ -48,15 +48,15 @@ export default function init(context: types.IExtensionContext) {
       const element = tutData[key][0];
       // Add the tutorial video to the TODO dashlet.
       context.registerToDo('todo-tutorial-vid',
-        'more', undefined, 'video', 'Introduction Video', () => {
-        const { store } = context.api;
-        store.dispatch(setTutorialOpen(element.id,
-          !util.getSafe(store.getState(),
-          ['session', 'tutorials', 'currentTutorial', 'isOpen'], false)));
-        context.api.events.emit('analytics-track-click-event', 'Dashboard', 'Intro Video');
-      }, undefined, (t) => (
-        <TutorialButton video={element} />
-      ), 5);
+                           'more', undefined, 'video', 'Introduction Video', () => {
+                             const { store } = context.api;
+                             store.dispatch(setTutorialOpen(element.id,
+                                                            !util.getSafe(store.getState(),
+                                                                          ['session', 'tutorials', 'currentTutorial', 'isOpen'], false)));
+                             context.api.events.emit('analytics-track-click-event', 'Dashboard', 'Intro Video');
+                           }, undefined, (t) => (
+                             <TutorialButton video={element} />
+                           ), 5);
     } else {
       if (tutData[key].length === 1) {
         const element = tutData[key][0];
@@ -81,7 +81,7 @@ export default function init(context: types.IExtensionContext) {
     context.api.onStateChange(['session', 'base', 'mainPage'], () => {
       const { store } = context.api;
       if (false !== util.getSafe(store.getState(),
-        ['session', 'tutorials', 'currentTutorial', 'isOpen'], false)) {
+                                 ['session', 'tutorials', 'currentTutorial', 'isOpen'], false)) {
         store.dispatch(closeTutorials());
       }
     });

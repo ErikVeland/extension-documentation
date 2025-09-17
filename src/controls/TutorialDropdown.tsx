@@ -51,13 +51,13 @@ class TutorialDropdown extends ComponentEx<IProps, IComponentState> {
       >
         {
           videos.map((video) =>
-          <TutorialButton
-            onClick={this.onToggle}
-            container={this.mRef}
-            key={video.group + video.id}
-            dropdown
-            video={video}
-          />)
+            <TutorialButton
+              onClick={this.onToggle}
+              container={this.mRef}
+              key={video.group + video.id}
+              dropdown
+              video={video}
+            />)
         }
       </DropdownButton>
     );

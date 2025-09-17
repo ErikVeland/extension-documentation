@@ -24,7 +24,7 @@ const sessionReducer: types.IReducerSpec = {
         util.setSafe(state, ['currentTutorial'], {
           tutorialId: INVALID_TUTORIAL_ID,
           isOpen: false,
-      }));
+        }));
     },
   },
 

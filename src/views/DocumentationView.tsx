@@ -252,6 +252,6 @@ function mapDispatchToProps(dispatch: any): IActionProps {
 }
 
 export default
-  connect(mapStateToProps, mapDispatchToProps)(
+connect(mapStateToProps, mapDispatchToProps)(
     withTranslation(['common'])(DocumentationView as any) as React.ComponentClass<IProps>);
 
